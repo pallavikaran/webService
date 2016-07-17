@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema">
+
+    <element name="address-book">
+    	<complexType>
+    		<sequence>
+    			<element name="person">
+    				<complexType>
+    					<sequence>
+    						<element name="name">
+    							<complexType>
+    								<sequence>
+    									<element name="first-name">
+    										<simpleType>
+    											<restriction
+    												base="string">
+    												<minLength
+    													value="5">
+    												</minLength>
+    												<maxLength
+    													value="15">
+    												</maxLength>
+    											</restriction>
+    										</simpleType>
+    									</element>
+    									<element name="middle-name" type="string"
+                                         maxOccurs="1" minOccurs="0">
+    									</element>
+                                        <element name="last-name" type="string" 
+                                        maxOccurs="unbounded" minOccurs="1">
+    									</element>
+                                    </sequence>
+    							</complexType>
+    						</element>
+    						<element name="dob" maxOccurs="1"
+    							minOccurs="0">
+    							<complexType>
+    								<attribute name="day"
+    									use="required">
+    									<simpleType>
+    										<restriction base="int">
+
+    											<minInclusive
+    												value="1">
+    											</minInclusive>
+    											<maxInclusive
+    												value="31">
+    											</maxInclusive>
+    										</restriction>
+    									</simpleType>
+    								</attribute>
+    								<attribute name="month"
+    									use="required">
+    									<simpleType>
+    										<restriction
+    											base="string">
+    											<enumeration
+    												value="JAN">
+    											</enumeration>
+    											<enumeration
+    												value="FEB">
+    											</enumeration>
+    											<enumeration
+    												value="MAR">
+    											</enumeration>
+    											<enumeration
+    												value="APR">
+    											</enumeration>
+    											<enumeration
+    												value="MAY">
+    											</enumeration>
+    										</restriction>
+    									</simpleType>
+    								</attribute>
+    								<attribute name="year"
+    									type="int" use="required">
+    								</attribute>
+    							</complexType>
+    						</element>
+    						<element name="profession"
+    							maxOccurs="unbounded" minOccurs="1">
+    							<complexType>
+    								<attribute name="value"
+    									type="string">
+    								</attribute>
+    							</complexType>
+    						</element>
+    					</sequence>
+    				</complexType>
+    			</element>
+    		</sequence>
+    	</complexType>
+    </element>
+</schema>

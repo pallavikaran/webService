@@ -1,0 +1,14 @@
+<!ELEMENT address-book (person*)>
+<!ELEMENT person (name,dob?,profession*)>
+<!ELEMENT name (first-name,middle-name?,last-name+)>
+<!ELEMENT profession (#PCDATA)>
+<!ELEMENT first-name (#PCDATA)>
+<!ELEMENT middle-name (#PCDATA)>
+<!ELEMENT last-name (#PCDATA)>
+<!ELEMENT dob EMPTY>
+
+<!ATTLIST dob day CDATA #REQUIRED>
+<!ATTLIST dob month (JAN|FEB|MAR|APR) #REQUIRED>
+<!ATTLIST dob year CDATA "2011">
+
+<!ATTLIST profession value CDATA #REQUIRED>

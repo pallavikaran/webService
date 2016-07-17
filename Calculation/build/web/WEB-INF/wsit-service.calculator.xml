@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+ <definitions 
+ xmlns="http://schemas.xmlsoap.org/wsdl/" 
+ xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" 
+ xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+ xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" name="calculator" targetNamespace="http://service/" xmlns:tns="http://service/" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:fi="http://java.sun.com/xml/ns/wsit/2006/09/policy/fastinfoset/service" xmlns:tcp="http://java.sun.com/xml/ns/wsit/2006/09/policy/soaptcp/service" xmlns:wsat="http://schemas.xmlsoap.org/ws/2004/10/wsat" 
+ >
+    <message name="sum"/>
+    <message name="sumResponse"/>
+    <message name="divide"/>
+    <message name="divideResponse"/>
+    <message name="difference"/>
+    <message name="differenceResponse"/>
+    <message name="product"/>
+    <message name="productResponse"/>
+    <message name="prodct"/>
+    <message name="prodctResponse"/>
+    <portType name="calculator">
+        <operation name="sum">
+            <input message="tns:sum"/>
+            <output message="tns:sumResponse"/>
+        </operation>
+        <operation name="divide">
+            <input message="tns:divide"/>
+            <output message="tns:divideResponse"/>
+        </operation>
+        <operation name="difference">
+            <input message="tns:difference"/>
+            <output message="tns:differenceResponse"/>
+        </operation>
+        <operation name="product">
+            <input message="tns:product"/>
+            <output message="tns:productResponse"/>
+        </operation>
+        <operation name="prodct">
+            <input message="tns:prodct"/>
+            <output message="tns:prodctResponse"/>
+        </operation>
+    </portType>
+    <binding name="calculatorPortBinding" type="tns:calculator">
+        <wsp:PolicyReference URI="#calculatorPortBindingPolicy"/>
+        <operation name="sum">
+            <wsp:PolicyReference URI="#calculatorPortBinding_sum_Policy"/>
+            <input/>
+            <output/>
+        </operation>
+        <operation name="divide">
+            <wsp:PolicyReference URI="#calculatorPortBinding_divide_Policy"/>
+            <input/>
+            <output/>
+        </operation>
+        <operation name="difference">
+            <wsp:PolicyReference URI="#calculatorPortBinding_difference_Policy"/>
+            <input/>
+            <output/>
+        </operation>
+        <operation name="product">
+            <wsp:PolicyReference URI="#calculatorPortBinding_product_Policy"/>
+            <input/>
+            <output/>
+        </operation>
+        <operation name="prodct">
+            <input/>
+            <output/>
+        </operation>
+    </binding>
+    <service name="calculator">
+        <port name="calculatorPort" binding="tns:calculatorPortBinding"/>
+    </service>
+    <wsp:Policy wsu:Id="calculatorPortBindingPolicy">
+        <wsp:ExactlyOne>
+            <wsp:All/>
+        </wsp:ExactlyOne>
+    </wsp:Policy>
+    <wsp:Policy wsu:Id="calculatorPortBinding_difference_Policy">
+        <wsp:ExactlyOne>
+            <wsp:All>
+                <wsat:ATAssertion wsp:Optional="true"/>
+            </wsp:All>
+        </wsp:ExactlyOne>
+    </wsp:Policy>
+    <wsp:Policy wsu:Id="calculatorPortBinding_divide_Policy">
+        <wsp:ExactlyOne>
+            <wsp:All>
+                <wsat:ATAssertion wsp:Optional="true"/>
+            </wsp:All>
+        </wsp:ExactlyOne>
+    </wsp:Policy>
+    <wsp:Policy wsu:Id="calculatorPortBinding_sum_Policy">
+        <wsp:ExactlyOne>
+            <wsp:All>
+                <wsat:ATAssertion wsp:Optional="true"/>
+            </wsp:All>
+        </wsp:ExactlyOne>
+    </wsp:Policy>
+    <wsp:Policy wsu:Id="calculatorPortBinding_product_Policy">
+        <wsp:ExactlyOne>
+            <wsp:All>
+                <wsat:ATAssertion wsp:Optional="true"/>
+            </wsp:All>
+        </wsp:ExactlyOne>
+    </wsp:Policy>
+</definitions>

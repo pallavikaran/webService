@@ -1,0 +1,70 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is JAX-WS RI 2.2.1-hudson-28-. --><xs:schema xmlns:tns="http://service/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://service/">
+
+<xs:element name="difference" type="tns:difference" />
+
+<xs:element name="differenceResponse" type="tns:differenceResponse" />
+
+<xs:element name="divide" type="tns:divide" />
+
+<xs:element name="divideResponse" type="tns:divideResponse" />
+
+<xs:element name="product" type="tns:product" />
+
+<xs:element name="productResponse" type="tns:productResponse" />
+
+<xs:element name="sum" type="tns:sum" />
+
+<xs:element name="sumResponse" type="tns:sumResponse" />
+
+<xs:complexType name="sum">
+<xs:sequence>
+<xs:element name="no1" type="xs:int" />
+<xs:element name="no2" type="xs:int" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="sumResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:int" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="divide">
+<xs:sequence>
+<xs:element name="a" type="xs:int" />
+<xs:element name="b" type="xs:int" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="divideResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:float" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="product">
+<xs:sequence>
+<xs:element name="a" type="xs:int" />
+<xs:element name="b" type="xs:int" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="productResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:int" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="difference">
+<xs:sequence>
+<xs:element name="a" type="xs:int" />
+<xs:element name="b" type="xs:int" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="differenceResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:int" />
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

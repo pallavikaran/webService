@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<address-book 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:noNamespaceSchemaLocation="person.xsd" >
+<person>
+	<name>
+		<first-name>Sameer</first-name>
+		<last-name>Naik</last-name>
+	</name>
+	<dob day="22" month="JAN" year="2011"/>
+	
+	<profession>Developer</profession>
+	<profession value="Trainer"/>
+</person>
+</address-book>
